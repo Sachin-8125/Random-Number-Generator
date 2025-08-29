@@ -1,16 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Number Generator</title>
-    <link rel="stylesheet" href="style.css>"
+  <meta charset="utf-8" />
+  <title>Random Number Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="index.js" defer></script>
 </head>
 <body>
-    <main>
-        
-    </main>
-    
-    
+  <main class="card" aria-labelledby="title">
+    <h1 id="title">Random Number Generator</h1>
+    <p class="helper">Set the range and click Generate to get a random integer (inclusive) within the bounds.</p>
+
+    <div class="grid" role="group" aria-label="Range inputs">
+      <div>
+        <label for="min">Min</label>
+        <input id="min" type="number" inputmode="numeric" value="1" />
+      </div>
+      <div>
+        <label for="max">Max</label>
+        <input id="max" type="number" inputmode="numeric" value="100" />
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="generate" type="button">Generate</button>
+      <button id="clear" type="button" class="clear">Clear</button>
+    </div>
+
+    <div id="error" class="error" role="alert" aria-live="polite"></div>
+    <div id="result" class="result" aria-live="polite">—</div>
+    <div class="hint">Note: This uses Math.random() and is not suitable for cryptographic purposes.</div>
+  </main>
 </body>
 </html>
